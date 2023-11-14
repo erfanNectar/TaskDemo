@@ -2,6 +2,7 @@ package com.example.TaskDemo.models;
 
 import com.example.TaskDemo.enums.UserType;
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,14 +20,26 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
+
+
+
+@Entity
+@Data
+public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
 
     private String username;
     private String password;
     @Column(unique=true)
     private String email;
+
+    private String userName;
+    private String passsword;
+
 
     @Enumerated(EnumType.STRING)
     private UserType userType;
@@ -66,4 +79,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

@@ -1,13 +1,19 @@
 package com.example.TaskDemo.config;
 
+<<<<<<< HEAD
 import com.example.TaskDemo.services.UserService;
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+<<<<<<< HEAD
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +26,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
     private static final String SECRET_KEY="KcPUoz3CSlHdsEKyytcKCjnI6JA0fiS6";
+<<<<<<< HEAD
     private final UserService userService;
     private static final Logger logger = LoggerFactory.getLogger(JwtService.class);
 
@@ -27,6 +34,8 @@ public class JwtService {
         this.userService = userService;
     }
 
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
     public String extractUserName(String token){
 
         return extractClaim(token,Claims::getSubject);
@@ -60,7 +69,11 @@ public class JwtService {
 
     }
 
+<<<<<<< HEAD
     public boolean isTokenExpired(String token) {
+=======
+    private boolean isTokenExpired(String token) {
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
         return extractExpiration(token).before(new Date());
     }
 
@@ -69,7 +82,11 @@ public class JwtService {
     }
 
     private Claims extractAllClaims(String token){
+<<<<<<< HEAD
         return Jwts.parserBuilder()
+=======
+        return jwts.parseBuilder()
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
                 .setSigningKey(getSigningKey())
                 .build()
                 .parseClaimsJws(token)

@@ -2,6 +2,7 @@ package com.example.TaskDemo.models;
 
 import com.example.TaskDemo.enums.TaskStatus;
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,6 +17,12 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+=======
+import lombok.Data;
+
+@Entity
+@Data
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,10 +35,13 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private TaskStatus taskStatus;
 
+<<<<<<< HEAD
     @CreatedDate
     private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 }

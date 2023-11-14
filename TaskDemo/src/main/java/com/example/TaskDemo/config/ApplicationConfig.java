@@ -4,6 +4,7 @@ import com.example.TaskDemo.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+<<<<<<< HEAD
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -13,17 +14,25 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+=======
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 
 @Configuration
 @RequiredArgsConstructor
 public class ApplicationConfig {
     private final UserRepository userRepository;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
     @Bean
     public UserDetailsService userDetailsService(){
         return username -> userRepository.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
+<<<<<<< HEAD
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider authProvider=new DaoAuthenticationProvider();
@@ -48,4 +57,6 @@ public class ApplicationConfig {
         return new BCryptPasswordEncoder();
     }
 
+=======
+>>>>>>> 3831ec33809aa84166b1a5d2636e98a4387f030d
 }
